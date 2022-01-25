@@ -7,6 +7,7 @@ body{
     font-weight: 600;
     display: flex;
     min-height: 100vh;
+    min-width: 100vw;
 }
 main{
     width: 50vw;
@@ -86,9 +87,14 @@ main form input[type="submit"]:hover{
     color: #FF735D;
 }
 section.images{
+    width: 50vw;
     display: flex;
     align-items: flex-end;
+    justify-content: flex-end;
     padding: 4rem;
+}
+.main-image{
+    max-width: 100%;
 }
 section.images .circle{
     position: absolute;
@@ -99,4 +105,19 @@ section.images .circle{
     background: #FF735D;
     clip-path: circle(50% at left);
     z-index: -1;
+}
+@media only screen and (min-width: 900px) and (max-width: 1200px){
+    .main-image{
+        max-width: 130%;
+    }
+}
+@media only screen and (max-width: 900px){
+    section.images{
+        display: none;
+        visibility: hidden;
+    }
+    main{
+        width: 100vw;
+        background: #FF735D;
+    }
 }
